@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from flask import Flask, request, jsonify
-import dbchat
+
 
 #from flask_sslify import SSLify
 
@@ -29,10 +29,10 @@ def webhook():
         data = request.get_json()
 
         if data['object'] == "page":
-            #print(data['entry'][0]['messaging'][0]['message'])
+            print(data['entry'][0]['messaging'][0]['message'])
             #print(data['entry'])
             #print(data)
-            print(dbchat.db_insert(data))
+            
 
         return 'EVENT_RECEIVED' , 200
 
